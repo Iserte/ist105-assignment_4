@@ -5,8 +5,17 @@
   <button type="submit">Calculate</button>
 </form>
 
-{% if result %}
-  <p><strong>Result:</strong> {{ result }}</p>
+{% if result_steps %}
+  <h2>Calculation Steps:</h2>
+  <ul>
+    {% for step in result_steps %}
+      <li>{{ step }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if final_result %}
+  <p><strong>Final Result:</strong> {{ final_result }}</p>
 {% elif error %}
   <p style="color:red;"><strong>Error:</strong> {{ error }}</p>
 {% endif %}
